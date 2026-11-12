@@ -1,0 +1,13 @@
+# Local-only dependencies: data prep, training, SHAP, evaluation, notebooks.
+# Install AFTER backend/requirements.txt.
+pandas>=2.2
+# pyarrow has no wheel for Intel macOS 11 + Python 3.13, so we use fastparquet.
+# pandas picks it automatically for to_parquet / read_parquet.
+fastparquet>=2024.2    # Parquet read/write for the 6.3M-row CSV
+numpy>=1.26
+scikit-learn>=1.5
+lightgbm>=4.3
+shap>=0.46
+matplotlib>=3.8
+jupyterlab>=4.2
+kaggle>=1.6            # optional: download PaySim from the command line

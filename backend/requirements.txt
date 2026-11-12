@@ -1,0 +1,10 @@
+# Runtime dependencies for the API that runs on Render.
+# Kept deliberately lean: Render's free instance has 512 MB RAM, and the API only
+# READS precomputed scores/SHAP values from MongoDB. Training libraries live in
+# requirements-ml.txt and never get deployed.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pymongo>=4.10          # 4.10+ includes the native async client (Motor is deprecated)
+certifi>=2024.8.30     # CA bundle; fixes the common TLS errors connecting to Atlas
+pydantic-settings>=2.4
+python-dotenv>=1.0
